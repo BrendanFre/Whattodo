@@ -1,22 +1,2 @@
 Afternoon, Evening, Date
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,Reading,2021-03-12
-Cities XXL,i,2021-03-12
-Cities XXL,a,2021-03-12
-Cities XXL,d,2021-03-12
-Cities XXL,R,2021-03-12
-"{0: 'Python', 1: 'YouTube', 2: 'Reading'}","{0: 'Assetto Corsa', 1: 'Kingdom Come Deliverance', 2: 'Cities XXL'}",2021-03-12
-"(' Evening', {0: 'Assetto Corsa', 1: 'Kingdom Come Deliverance', 2: 'Cities XXL'})","{0: 'Assetto Corsa', 1: 'Kingdom Come Deliverance', 2: 'Cities XXL'}",2021-03-12
-Afternoon,"{0: 'Python', 1: 'YouTube', 2: 'Reading'}",2021-03-12
- Evening,"{0: 'Python', 1: 'YouTube', 2: 'Reading'}",2021-03-12
-Afternoon,"{0: 'Assetto Corsa', 1: 'Kingdom Come Deliverance', 2: 'Cities XXL'}",2021-03-12
-"('Afternoon', {0: 'Python', 1: 'YouTube', 2: 'Reading'})","{0: 'Python', 1: 'YouTube', 2: 'Reading'}",2021-03-12
+Reading,YouTube,2021-03-13
