@@ -32,12 +32,9 @@ def check_csv():
 
 def already_run():
     global df
-    global df
     df = pd.read_csv('log.csv', header=None, squeeze=True)
     df.columns = ["Afternoon", "Evening", "Date"]
     if string_current_date in df.values:
-        # [df2[2] == string_current_date]:
-        print("Present")
         out = df['Date'].isin([string_current_date])
         df = df[out]
         interface()
@@ -60,22 +57,19 @@ def random_select():
     global after_work
     global before_bed
     global df
-    # after_work = random.choice(list(dict_from_csv.items()))
-    # before_bed = random.choice(list(dict_from_csv.values()))
 
     # Needs to be fixed
     df = pd.read_csv('activities.csv', header=0, squeeze=True)
     after_work = df['Afternoon'].iloc[np.random.randint(len(df))]
     before_bed = df['Afternoon'].iloc[np.random.randint(len(df))]
 
-    print(after_work + before_bed)
-
     while after_work == before_bed:
-        after_work = df[0].iloc[np.random.randint(len(df))]
+        after_work = df['Afternoon'].iloc[np.random.randint(len(df))]
     global csv_new_row
     csv_new_row = [after_work, before_bed, current_date]
     after_work = str(after_work)
     before_bed = str(before_bed)
+    append_list_as_row('log.csv', csv_new_row)
     df = {'Afternoon': [after_work], 'Evening': [before_bed], 'Date': [string_current_date]}
     interface()
 
@@ -142,8 +136,5 @@ check_csv()
 already_run()
 interface()
 random_select()
-data = {'Afternoon': [after_work], 'Evening': [before_bed]}
-df3 = pd.DataFrame(data, columns=['Afternoon', 'Evening'])
-print(df3)
-append_list_as_row('log.csv', csv_new_row)
+
 sys.exit()
