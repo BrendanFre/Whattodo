@@ -37,7 +37,7 @@ def already_run():
     if string_current_date in df.values:
         out = df['Date'].isin([string_current_date])
         df = df[out]
-        interface()
+        return df
     else:
         random_select()
 
@@ -87,11 +87,23 @@ def pivot_table():
     global df
     global layout
     df = pd.read_csv('log.csv')
+    df = pd.DataFrame.from_dict(df)
     df['Count'] = 1
     df.columns = ['Afternoon', 'Evening', 'Date', 'Count']
-    pivot_table1 = pd.pivot_table(df, index=['Afternoon'], values=['Count'], aggfunc=[np.sum], margins=True)
-    pivot_table2 = pd.pivot_table(df, index=['Evening'], values=['Count'], aggfunc=[np.sum], margins=True)
-    window.Element('_TEXT_').Update(pivot_table1)
+    df2 = pd.read_csv('log.csv')
+    df2 = pd.DataFrame.from_dict(df2)
+    df2['Count'] = 1
+    df2 .columns = ['Afternoon', 'Evening', 'Date', 'Count']
+    df.drop(df.columns[1], axis=1, inplace=True)
+    df.drop(df.columns[1], axis=1, inplace=True)
+    df2.drop(df2.columns[2], axis=1, inplace=True)
+    df2.drop(df2.columns[2], axis=1, inplace=True)
+    df2 = df2.values.tolist()
+    #print(df2)
+    df.loc[len(df)] = df2
+    df.columns = ['Activity', 'Count']
+    df = pd.pivot_table(df, index=['Activity'], values=['Count'], aggfunc=[np.sum], margins=True)
+    window.Element('_TEXT_').Update(df)
     window.close()
     interface()
 
